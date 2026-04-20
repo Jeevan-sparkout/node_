@@ -1,0 +1,30 @@
+{
+  "name": "node_",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "homepage": "https://github.com/Jeevan-sparkout/node_#readme",
+  "bugs": {
+    "url": "https://github.com/Jeevan-sparkout/node_/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeevan-sparkout/node_.git"
+  },
+  "license": "ISC",
+  "author": "Jeevan",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1"
+  }
+}
