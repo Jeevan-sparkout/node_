@@ -51,11 +51,11 @@ const getPost = async (req, res) => {
         try {
             const {name} = req.body;
 
-            if(!name) res.status(400).json({message:"Nmae is required"});
+            if(!name) return res.status(400).json({message:"Name is required"});
 
             const post = await Post.findOne({name});
 
-            if(!post) res.status(400).json({message:"post not found"});
+            if(!post) return res.status(404).json({message:"post not found"});
 
             res.status(200).json({message:"post foun successfully" , data:post});
 
@@ -75,7 +75,7 @@ const updatePost = async(req , res) =>{
 
         const post = await Post.findByIdAndUpdate(req.params.id , req.body, {new:true});
 
-        if(!post) res.status(400).json({message:"post not found"});
+        if(!post) return res.status(404).json({message:"post not found"});
 
         res.status(200).json({message:"post updated successfully" , data:post});
         
@@ -93,7 +93,7 @@ const deletePost = async (req,res) => {
         
         const _delete = await Post.findByIdAndDelete(req.params.id);
 
-        if(!_delete) res.status(400).json({message:"Post not found"});
+        if(!_delete) return res.status(404).json({message:"Post not found"});
 
         res.status(200).json({message:"Post deleted successfully"})
 
